@@ -26,7 +26,17 @@ def sightings():
     lim = request.args.get('limit', 10)
     off = request.args.get('offset', 0)
     
-    results = Sighting.query.limit(lim).offset(off).all()
+    radius = request.args.get('radius', 10)
+    location = request.args.get('location', ',')
+    lat, lng = location.split(',')
+    
+    if lat and lng and radius:
+      query = "SELECT id,  location, ( 3959 * acos( cos( radians( %(latitude)s ) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians( %(longitude)s ) ) + sin( radians( %(latitude)s ) ) * sin( radians( lat ) ) ) ) AS distance FROM sightings HAVING distance < %(radius)s ORDER BY distance LIMIT %(limit)s" % {"latitude": lat, "longitude": lng, "radius": radius, "limit": lim}
+
+      results = Sighting.query.from_statement(query).all()
+
+    else:
+      results = Sighting.query.limit(lim).offset(off).all()
 
     json_results = []
     for result in results:
