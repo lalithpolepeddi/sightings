@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -18,6 +18,26 @@ class Sighting(db.Model):
   description = db.Column(db.Text)
   lat = db.Column(db.Float(6))
   lng = db.Column(db.Float(6))
+
+
+@app.route('/sightings/', methods=['GET'])
+def sightings():
+  if request.method == 'GET':
+    results = Sighting.query.limit(10).offset(0).all()
+
+    json_results = []
+    for result in results:
+      d = {'sighted_at': result.sighted_at,
+           'reported_at': result.reported_at,
+           'location': result.location,
+           'shape': result.shape,
+           'duration': result.duration,
+           'description': result.description,
+           'lat': result.lat,
+           'lng': result.lng}
+      json_results.append(d)
+
+    return jsonify(items=json_results)
 
 
 if __name__ == '__main__':
