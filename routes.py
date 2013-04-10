@@ -23,7 +23,10 @@ class Sighting(db.Model):
 @app.route('/sightings/', methods=['GET'])
 def sightings():
   if request.method == 'GET':
-    results = Sighting.query.limit(10).offset(0).all()
+    lim = request.args.get('limit', 10)
+    off = request.args.get('offset', 0)
+    
+    results = Sighting.query.limit(lim).offset(off).all()
 
     json_results = []
     for result in results:
