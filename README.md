@@ -30,4 +30,4 @@ $ git checkout 03_sighting_element
 ## Using the GitHub branch menu
 Alternatively, you can use GitHub's web interface to view each checkpoint. Click on the branch menu and select the checkpoint you want to view, shown below:
 
-![GitHub Branch Menu](https://raw.github.com/cuttarug/intro-to-flask/master/intro_to_flask/static/img/branch-menu.png)
+![GitHub Branch Menu](https://raw.github.com/cuttarug/sightings/master/branch-menu.png)
