@@ -2,6 +2,8 @@
 
 This is a sample application for "How to Build an API with Python and Flask" on Tech.Pro.
 
+The data used for this application is a geocoded version of Infochimps's UFO Sightings dataset, and [can be downloaded here](https://www.dropbox.com/s/aoim0kwg7v30fii/sightings.tsv).
+
 This repo has the following checkpoints
 
 * [00_configuration](https://github.com/cuttarug/sightings/tree/00_configuration)
