@@ -50,7 +50,9 @@ def sightings():
            'lng': result.lng}
       json_results.append(d)
 
-    return jsonify(items=json_results)
+    res = jsonify(items=json_results)
+    res.headers['Access-Control-Allow-Origin'] = '*'
+    return res
 
 @app.route('/sightings/<int:sighting_id>', methods=['GET'])
 def sighting(sighting_id):
@@ -66,4 +68,6 @@ def sighting(sighting_id):
                    'lat': result.lat,
                    'lng': result.lng}
 
-    return jsonify(items=json_result)
+    res = jsonify(items=json_results)
+    res.headers['Access-Control-Allow-Origin'] = '*'
+    return res
