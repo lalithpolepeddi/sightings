@@ -12,6 +12,7 @@ This repo has the following checkpoints
 * [03_sighting_element](https://github.com/cuttarug/sightings/tree/03_sighting_element)
 * [04_limit_offset](https://github.com/cuttarug/sightings/tree/04_limit_offset)
 * [05_location_radius](https://github.com/cuttarug/sightings/tree/05_location_radius)
+* [06_production](https://github.com/cuttarug/sightings/tree/06_production)
 
 You can switch to each checkpoint to see what the code looks like up to that point by either cloning the repo or using the GitHub branch menu.
 
