@@ -13,6 +13,7 @@ This repo has the following checkpoints
 * [04_limit_offset](https://github.com/cuttarug/sightings/tree/04_limit_offset)
 * [05_location_radius](https://github.com/cuttarug/sightings/tree/05_location_radius)
 * [06_production](https://github.com/cuttarug/sightings/tree/06_production)
+* [07_CORS](https://github.com/cuttarug/sightings/tree/07_CORS)
 
 You can switch to each checkpoint to see what the code looks like up to that point by either cloning the repo or using the GitHub branch menu.
 
@@ -34,5 +35,4 @@ $ git checkout 03_sighting_element
 Alternatively, you can use GitHub's web interface to view each checkpoint. Click on the branch menu and select the checkpoint you want to view, shown below:
 
 ![GitHub Branch Menu](https://raw.github.com/cuttarug/sightings/master/branch-menu.png)
-
 
