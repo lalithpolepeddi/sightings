@@ -59,7 +59,7 @@ def sighting(sighting_id):
   if request.method == 'GET':
     result = Sighting.query.filter_by(id=sighting_id).first()
 
-    json_result = {'sighted_at': result.sighted_at,
+    json_results = {'sighted_at': result.sighted_at,
                    'reported_at': result.reported_at,
                    'location': result.location,
                    'shape': result.shape,
