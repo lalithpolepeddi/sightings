@@ -2,10 +2,11 @@ from flask import Flask, request, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-db = SQLAlchemy(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://cleardb-username:cleardb-password@cleardb-server/cleardb-database'
 
+
+db = SQLAlchemy(app)
 
 class Sighting(db.Model):
   __tablename__ = 'sightings'
